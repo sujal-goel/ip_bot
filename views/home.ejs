@@ -7,6 +7,8 @@
   <title>Startup Website</title>
   <link rel="stylesheet" href="/css/homestyle.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.css" />
 </head>
 <body>
 
@@ -16,11 +18,10 @@
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#about">Products</a></li>
+        <li><a href="#aboutcatch">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
-        <%if (loggedIn == true){%>
+        <% if (loggedIn) { %>
           <li class="profile">
             <span>
               <img src="/img/account.png" alt="Profile">
@@ -28,68 +29,66 @@
             <div class="dropdown-content">
               <a href="/profile">Profile</a>
               <a href="/logout">Logout</a>
-              </div>
-              </li>
-         <%}else{%>
-        <li><a href="/login">Login</a></li>
-      <%}%>
-
+            </div>
+          </li>
+        <% } else { %>
+          <li><a href="/login">Login</a></li>
+        <% } %>
       </ul>
     </nav>
   </header>
+
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="content">
-      <h2 class="animated fadeInDown">Welcome to Our Startup</h2>
-      <p class="animated fadeInUp">INSTURANCE is a INSURTECH company which is set to be insdustry leader and a unicorn in the future !!</p>
+      <h2 class="animate__animated animate__fadeInDown">Welcome to Our Startup</h2>
+      <p class="animate__animated animate__fadeInUp">INSTURANCE is an INSURTECH company which is set to be an industry leader and a unicorn in the future!</p>
       <a href="#about" class="cta-button">Learn More</a>
     </div>
   </section>
 
-  
-  <!-- Vision section-->
-  <section id="Vision" class="about">
-    <h2 class="animated fadeInDown">Our Vision</h2>
-    <p class = "animated fadeInUp">"Our vision is to be the ultimate destination for every influencer, offering all the tools and resources needed to elevate their brand and create lasting impact. We aspire to lead the industry with cutting-edge solutions, ensuring that influencers choose us for success, and investors see us as their top choice for future growth."</p>
+  <!-- Vision Section -->
+  <section id="vision" class="about animate" data-aos="fade-up">
+    <h2 class="animate__animated animate__fadeIn">Our Vision</h2>
+    <p class="animate__animated animate__fadeIn">"Our vision is to be the ultimate destination for every influencer, offering all the tools and resources needed to elevate their brand and create lasting impact. We aspire to lead the industry with cutting-edge solutions, ensuring that influencers choose us for success, and investors see us as their top choice for future growth."</p>
   </section>
-  
+<div id="aboutcatch"></div>
   <!-- About Section -->
-  <section id="about" class="about">
-    <h2>About us</h2>
-    <p>In today’s digital world, influencers drive content creation and trends but face growing challenges like intellectual property theft and the pressure to increase their social presence. Our company was founded to address these issues.</p>
-    <p>
-      We noticed influencers losing control of their content and struggling to manage the complexities of online growth. This inspired us to create an AI-driven solution that protects intellectual property while simplifying social media management. By offering seamless automation, robust protection, and growth strategies, we empower influencers to focus on their creativity. At the same time, we handle the complexities—paving the way for future success in the digital space.</p>
+  <section id="about" class="about animate" data-aos="fade-up">
+    <h2 class="animate__animated animate__fadeIn">About Us</h2>
+    <p class="animate__animated animate__fadeIn">In today’s digital world, influencers drive content creation and trends but face growing challenges like intellectual property theft and the pressure to increase their social presence. Our company was founded to address these issues.</p>
+    <p class="animate__animated animate__fadeIn">We noticed influencers losing control of their content and struggling to manage the complexities of online growth. This inspired us to create an AI-driven solution that protects intellectual property while simplifying social media management. By offering seamless automation, robust protection, and growth strategies, we empower influencers to focus on their creativity. At the same time, we handle the complexities—paving the way for future success in the digital space.</p>
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="services">
-    <h2>Our Services</h2>
-    <div class="service-item">
+  <section id="services" class="services animate" data-aos="fade-up">
+    <h2 class="animate__animated animate__fadeIn">Our Services</h2>
+    <div class="service-item animate__animated animate__fadeIn">
       <h3>Content Analyser</h3>
-      <p>Content is a Medium of Conversation over social media. A sharp analysis over it gives an advatage to gain valuable insights and prdict future of it. And We provide the best analysing tool to Do so. </p>
+      <p>Content is a Medium of Conversation over social media. A sharp analysis over it gives an advantage to gain valuable insights and predict the future of it. And We provide the best analysing tool to do so.</p>
     </div>
-    <div class="service-item">
+    <div class="service-item animate__animated animate__fadeIn">
       <h3>Account Analyser</h3>
-      <p>This is a feature that anayze and nurture actual potential of the account that can be reached being in a risk free environment of Banning the account handle due to fake spam reports</p>
+      <p>This is a feature that analyzes and nurtures the actual potential of the account that can be reached being in a risk-free environment of Banning the account handle due to fake spam reports.</p>
     </div>
-    <div class="service-item">
-      <h3>Market Trends analyser</h3>
-      <p>This tool gives analysis a large set of posts being viral over social media gives a detailed info to influcers to become part of the latest trends going on in the market</p>
+    <div class="service-item animate__animated animate__fadeIn">
+      <h3>Market Trends Analyser</h3>
+      <p>This tool gives analysis of a large set of posts being viral over social media and gives detailed info to influencers to become part of the latest trends going on in the market.</p>
     </div>
-    <div class="service-item">
+    <div class="service-item animate__animated animate__fadeIn">
       <h3>Protection Policy</h3>
-      <p>We aim to protect the ip rights and prevention of breaking the community guidlines that may lead to harm your social handle</p>
+      <p>We aim to protect the IP rights and prevention of breaking the community guidelines that may lead to harm your social handle.</p>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact">
-    <h2>Contact Us</h2>
+  <section id="contact" class="contact animate" data-aos="fade-up">
+    <h2 class="animate__animated animate__fadeIn">Contact Us</h2>
     <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+      <input type="text" placeholder="Your Name" required class="animate__animated animate__fadeIn">
+      <input type="email" placeholder="Your Email" required class="animate__animated animate__fadeIn">
+      <textarea placeholder="Your Message" required class="animate__animated animate__fadeIn"></textarea>
+      <button type="submit" class="animate__animated animate__fadeIn">Send Message</button>
     </form>
   </section>
 
@@ -98,5 +97,10 @@
     <p>&copy; 2024 Startup Inc. All rights reserved.</p>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="js/home.js"></script>
 </body>
 </html>
