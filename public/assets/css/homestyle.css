@@ -1,0 +1,228 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease;
+  }
+  
+  .navbar.scrolled {
+    background: #222;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar ul li {
+    margin-left: 2rem;
+  }
+  
+  .navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .navbar ul li a:hover {
+    color: #ddd;
+  }
+  
+  
+
+  /* Hero Section */
+  .hero {
+    height: 100vh;
+    background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+  
+  .hero .content {
+    z-index: 1;
+    animation: fadeIn 2s ease forwards;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    background: #ff5f6d;
+    padding: 1rem 2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background 0.3s;
+  }
+  
+  .cta-button:hover {
+    background: #ff2d4d;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 5rem 2rem;
+    background: white;
+    text-align: center;
+  }
+  
+  .about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Services Section */
+  .services {
+    background-color: #333;
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .services h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .service-item {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #444;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .service-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* Contact Section */
+  .contact {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: white;
+  }
+  
+  .contact form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .contact input, .contact textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .contact button {
+    background: #ff5f6d;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .contact button:hover {
+    background: #ff2d4d;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #333;
+    color: white;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .animated {
+    opacity: 0;
+  }
+  
+  .fadeInDown {
+    animation: fadeInDown 1s forwards;
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .fadeInUp {
+    animation: fadeInUp 1s forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
