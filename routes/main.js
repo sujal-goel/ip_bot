@@ -64,11 +64,11 @@ router.get('/users/:id', requireLogin, async (req, res, next) => {
     res.render('userprofile', {foundUser,firstName});
 });
 router.get('/logout', (req, res) => {
-    let loggedIn = false;
-    let userId = req.session.userId;
-    if(userId){
-        loggedIn = true;
-    }
-    res.render('home',{loggedIn, userId});
+    req.session.destroy((err) => {
+        if (err) {
+            return res.redirect('/'); // Redirect to home on error
+        }
+        res.redirect('/'); // Redirect to home on successful logout
+    });
 });
 module.exports = router;

@@ -94,7 +94,7 @@ section {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
+  background-color: rgb(17, 97, 150);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   min-width: 160px;
