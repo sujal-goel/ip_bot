@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  background-image: url('/img/background.webp'); /* Example texture */
+  background-image: url('/img/bg2.jpeg'); /* Example texture */
   background-size:  100vw 130vh;
   background-blend-mode: overlay;
   background-attachment: fixed; /* Gives a parallax effect when scrolling */
