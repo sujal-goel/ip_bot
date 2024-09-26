@@ -1,13 +1,13 @@
+const wrapper = document.querySelector('.wrapper');
+const registerLink= document.querySelector('.register-link');
+const loginLink= document.querySelector('.login-link');
 
-const logtosign = function (){
-const loginsec=document.querySelector('.login-section')
-const loginlink=document.querySelector('.login-link')
-const registerlink=document.querySelector('.register-link')
-registerlink.addEventListener('click',()=>{
-    loginsec.classList.add('active')
-})
-loginlink.addEventListener('click',()=>{
-    loginsec.classList.remove('active')
-})
+
+registerLink.addEventListener("click", () => {
+    wrapper.classList.add('active');
+
+});
+loginLink.addEventListener("click",() => {
+    wrapper.classList.remove('active');
 }
-logtosign();
+);

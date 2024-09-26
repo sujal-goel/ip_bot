@@ -1,104 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSTURANCE Login Page</title>
     <link rel="stylesheet" href="/css/loginstyle.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
-    <!-- NAVBAR CREATION -->
-     
-    <img src="/img/logo.png" alt="">
 
-   <header class="header">
-    <nav class="navbar">
-        
-        <a href="#">Home</a>
-        <a href="#">About</a>
-          <a href="#">Products</a>
-          <a href="#">Contact</a>
-          <a href="#">Help</a>
-    </nav>
-    <form action="" class="search-bar">
-       <input type="text" placeholder="Search...">
-       <button><i class='bx bx-search'></i></button>
-    </form>
-   </header>
-    <!-- LOGIN FORM CREATION -->
-    <div class="background"></div>
-    <div class="container">
-        <div class="item">
-            <div class="text-item">
-                <h1>Welcome ! <br><span>
-                    To Our Website
-                </span></h1>
-                <p>INSTURANCE is a INSURTECH company which is set to be insdustry leader and a unicorn in the future !!</p>
-                <div class="social-icon">
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                    <a href="#"><i class='bx bxl-youtube'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+<body>
+
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+<img src="/img/logo.png" alt="">
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:20;"></h2>
+            <form action="/login" method="post">
+                <div class="input-box animation" style="--i:1; --j:22;">
+                <input type="text" name="uname" id="uname" required autocomplete="off">
+                <label for="uname">Email</label>
+                <i class='bx bxs-user'></i>
                 </div>
-            </div>
-        </div>
-        <div class="login-section">
-            <div class="form-box login">
-                <form method ="post" action="/login">
-                    <h2>Sign In</h2>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-envelope'></i></span>
-                        <input type="email" name="uname" required>
-                        <label >Email</label>
+                <div class="input-box animation" style="--i:2; --j:23;">
+                    <input type="password" name="pass" id="pass" required autocomplete="off">
+                    <label for="pass">Password</label>
+                    <i class='bx bxs-lock-alt' ></i>
                     </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
-                        <input type="password" name="pass" required>
-                        <label>Password</label>
-                    </div>
-                    <div class="remember-password">
-                        <label for=""><input type="checkbox">Remember Me</label>
-                        <a href="#">Forget Password</a>
-                    </div>
-                    <button class="btn">Login In</button>
-                    <div class="create-account">
+                    <button type="submit" class="btn animation" style="--i:3; --j:24;">Login</button>
+
+                    <div class="logreg-link bg-animation" style="--i:4; --j:25;">
                         <p>Don't have an account? <a href="#" class="register-link">Sign Up</a></p>
                     </div>
-                </form>
-            </div>
-            <div class="form-box register">
-                <form method= "post" action="/signup">
-
-                    <h2>Sign Up</h2>
-
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-user'></i></span>
-                        <input type="text" name="username" required>
-                        <label >Username</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-envelope'></i></span>
-                        <input type="email" name="email" required>
-                        <label >Email</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-lock-alt' ></i></span>
-                        <input type="password" name="password" required>
-                        <label>Password</label>
-                    </div>
-                    <div class="remember-password">
-                        <label for=""><input type="checkbox">I agree with this statment</label>
-                    </div>
-                    <button class="btn">Login In</button>
-                    <div class="create-account">
-                        <p>Already Have An Account? <a href="#" class="login-link">Sign In</a></p>
-                    </div>
-                </form>
-            </div>
+            </form>
         </div>
-    </div>
-     <!-- SIGN UP FORM CREATION -->
-<script src="/js/login.js"></script>
+<div class="info-text login">
+    <h2 class="animation" style="--i:0;">Welcome To our Website!!</h2>
+    <p class="animation" style="--i:1;">  </p>
+</div>
+<div class="form-box register">
+    <h2 class="--i:17; --j:0;">Sign Up</h2>
+    <form action="/register" method="post">
+        
+        <div class="input-box animation" class="--i:18; --j:1;">
+        <input type="text" name="username" id="username" required autocomplete="off">
+        <label for="username">Username</label>
+        <i class='bx bxs-user'></i>
+        </div>
+
+        <div class="input-box animation" class="--i:19; --j:2;">
+            <input type="text" name="email" id="email" required autocomplete="off">
+            <label for="email">Email</label>
+            <i class='bx bxs-envelope' ></i>'></i>
+        </div>
+
+        <div class="input-box animation" class="--i:20; --j:3;">
+            <input type="password" name="password" id="password" required autocomplete="off">
+            <label for="password">Password</label>
+            <i class='bx bxs-lock-alt' ></i>
+            </div>
+            <button type="submit" class="btn animation" class="--i:21; --j:4;">Sign Up</button>
+
+            <div class="logreg-link animation" class="--i:22; --j:5;">
+                <p>Already have an account? <a href="#" class="register-link">Login</a></p>
+            </div>
+             </form>
+            </div>
+
+            <div class="info-text register">
+                <h2 class="animation" style="--1:17; --j:0;">Welcome Back!</h2>
+                <p class="animation" style="--i:18; --j:1;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam veritatis ullam totam hic </p>
+            </div>
+
+                <script src="/js/login.js"></script>
 </body>
 
 </html>

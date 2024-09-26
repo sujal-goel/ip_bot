@@ -20,13 +20,16 @@
         <li><a href="#about">Products</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
-        <%if (loggedin){%>
-        <li><span ><img src="/img/account.png" alt=""></span></li>
-          <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
+        <%if (loggedIn == true){%>
+          <li class="profile">
+            <span>
+              <img src="/img/account.png" alt="Profile">
+            </span>
+            <div class="dropdown-content">
+              <a href="/profile">Profile</a>
+              <a href="/logout">Logout</a>
+              </div>
+              </li>
          <%}else{%>
         <li><a href="/login">Login</a></li>
       <%}%>
@@ -73,7 +76,7 @@
       <h3>Market Trends analyser</h3>
       <p>This tool gives analysis a large set of posts being viral over social media gives a detailed info to influcers to become part of the latest trends going on in the market</p>
     </div>
-    <div class="service-item"></div>
+    <div class="service-item">
       <h3>Protection Policy</h3>
       <p>We aim to protect the ip rights and prevention of breaking the community guidlines that may lead to harm your social handle</p>
     </div>

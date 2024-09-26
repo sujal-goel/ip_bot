@@ -1,71 +1,45 @@
 const express = require('express');
 const path = require('path');
-const bcrypt = require('bcrypt');
-const collection = require("./config");
 const app = express();
+const methodOverride = require('method-override');
+const ejsMate = require('ejs-mate');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const bcrypt = require('bcrypt');
+const Router = express.Router();
+const mainRoutes = require('../routes/main')
+const flash = require('connect-flash')
 
-app.set("view engine", 'ejs');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+const Model = mongoose.model;
 
-app.use(express.static("public/assets"));
-app.use(express.json());
-app.use(express.urlencoded({extended: false}));
+const User = require('./config')
 
-app.get("/",(req,res)=>{
-    res.render("home",{loggedin:false});
+mongoose.connect('mongodb://127.0.0.1:27017/startup')
+.then(() => {
+    console.log('Connection Successful!');
 })
-app.get("/login",(req,res)=>{
-    res.render("login");
+.catch((err) => {   
+    console.log(err);
 })
 
-app.get("/signup",(req,res)=>{
-    res.render("login");
+
+app.engine('ejs',ejsMate);
+app.set('views', path.join(__dirname, '../views'));
+app.use(express.static(path.join(__dirname,'../public/assets')));
+app.use(express.urlencoded({extended:true})); 
+app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(session({ secret : 'this-is-a-key', resave: false, saveUninitialized : false}))
+app.use(flash());
+app.set('view engine', 'ejs');
+
+
+
+app.use('/' , mainRoutes);
+
+app.listen(5000, () => {
+    console.log("Server online!")
 })
-app.post("/signup",async (req,res)=>{
-try{
-const data = {
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
-}
-const existinguser = await collection.findOne({username: data.name});
-if(existinguser){
-    res.send("User already exists. Please choose a different username.")
-}else{
 
-const saltRounds =10;
-const hashed = await bcrypt.hash(data.password,saltRounds);
-data.password = hashed;
-
-const userdata = await collection.insertMany(data);
-console.log(userdata);
-res.render("/home");
-}}
-catch{
-    res.send("some error occured");
-    res.render("/login");
-}
-
-});
-
-app.post("/login",async (req,res)=>{
-    try{
-        const check = await collection.findOne({email:req.body.uname});
-        if(!check){
-            res.send("user name cannot be found");
-        }
-        const isPasswordMatched = await bcrypt.compare(req.body.pass, check.password);
-        if(isPasswordMatched){
-            res.render("home",{loggedin:true});
-        }else{
-            res.send("wrong password");
-        }
-    }catch{
-        res.send("wrong details");
-    }
-});
-
-const port = 5000;
-app.listen(port,()=>{
-    console.log(`Server running on: http://127.0.0.1:${port}`);
-
-})
