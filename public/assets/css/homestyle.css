@@ -43,26 +43,50 @@ section {
 }
 
 /* Navbar */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Hide the navigation links by default on small screens */
+/* Fixed selector and navbar positioning */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #000000;
   padding: 15px 30px;
- margin-left:0;
+  margin-left: 0;
+  position: relative; /* Ensure the dropdown appears relative to the navbar */
+}
+.navbar img{
+  width:150px;
 }
 
-.navbar img {
-  width: 150px;
-}
-
-.navbar nav ul {
-  list-style: none;
+.nav-links {
   display: flex;
-  margin: 0;
-  padding: 0;
+  list-style: none;
+  margin-left: auto; /* Push the links to the right */
 }
 
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  display: block;
+}
+.navbar nav ul li a:hover {
+  background-color: #555;
+} 
 .navbar nav ul li {
   margin-left: 20px;
 }
@@ -75,9 +99,7 @@ section {
   transition: background-color 0.3s ease;
 }
 
-.navbar nav ul li a:hover {
-  background-color: #555;
-}
+
 
 /* Profile dropdown */
 .profile {
@@ -246,14 +268,6 @@ footer {
 
 /* Responsive Media Queries */
 @media (max-width: 768px) {
-  .navbar nav ul {
-    flex-direction: column;
-  }
-
-  .navbar nav ul li {
-    margin-left: 0;
-    margin-top: 10px;
-  }
 
   .hero h2 {
     font-size: 2rem;
@@ -261,6 +275,40 @@ footer {
 
   .hero p {
     font-size: 1rem;
+  }
+  .nav-links {
+    display: none; /* Hide by default */
+    flex-direction: column;
+    width: 100%; /* Full width */
+    background-color: #333; /* Matches the navbar background */
+    position: absolute;
+    top: 60px; /* Below the navbar */
+    left: 0;
+    z-index: 100; /* Ensure it appears above other content */
+  }
+
+  .nav-links.show {
+    display: flex; /* Show the menu when .show is toggled */
+  }
+
+  .nav-links li {
+    margin: 0;
+    padding: 10px;
+    text-align: center; /* Center the menu items */
+  }
+
+  /* Show hamburger icon on small screens */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
   }
 
   .cta-button {
@@ -292,5 +340,12 @@ footer {
   .service-item {
     width: 90%;
     margin: 20px auto;
+  }
+}
+
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide the hamburger icon on larger screens */
   }
 }

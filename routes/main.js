@@ -51,7 +51,6 @@ router.get('/register', (req, res) => {
 
 router.post('/register', async (req, res) => {
     const { password,username,email, ...otherDetails } = req.body;
-    console.log(req.body);
     let userId = await User.createAndRegister(password,username,email, otherDetails);
     req.session.userId = userId;
     res.redirect('/');
